@@ -2,10 +2,12 @@
 import React, {FC, JSXElementConstructor} from 'react'
 import {useState} from "react";
 import styles from "./styles.module.css";
+import {LucideProps} from "lucide-react";
 
 
 interface SocialMediaHandleProps {
-    icon: JSXElementConstructor<any>,
+
+    icon: JSXElementConstructor<LucideProps>,
     handleText: string,
     noText?: boolean,
     href?: string
