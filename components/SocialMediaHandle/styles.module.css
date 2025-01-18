@@ -1,0 +1,14 @@
+.button {
+    background-color: #ca99b0;
+    padding: 0.5rem;
+    border: 2px solid #c379b3;
+    border-radius: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    height: 2.125rem;
+    z-index: 10;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    transition: opacity 2s ease-in-out;
+}
