@@ -3,16 +3,17 @@ import Image from "next/image";
 import css from "./landingpage.module.css";
 import {GithubIcon, InstagramIcon, LinkedinIcon} from "lucide-react";
 import SocialMediaHandle from "@/components/SocialMediaHandle/SocialMediaHandle";
+import Link from "next/link"
 
 
 
 export default function Home() {
 
   return (
-        <div>
-            <div className="flex justify-center items-center h-screen">
-                <div className={"fixed"}>
-                    <div className="flex flex-col items-center -z-10">
+        <div className={css.body}>
+            <div className={css.wrapper}>
+                <div className={css.content}>
+                    <div className="flex flex-col items-center mb-4">
                         <Image
                             src="/me.jpg"
                             alt="TeekunDEV"
@@ -20,11 +21,11 @@ export default function Home() {
                             height={180}
                             className={"rounded-xl border-2 border-fuchsia-300 shadow-lg"}
                         />
-                        <h1 className={`font-bold text-4xl ${css.textShadow}`}>TeekunDEV</h1>
-                        <p className={`text-lg ${css.textShadow}`}>Web Developer</p>
+                        <h1 className={`font-bold text-4xl ${css.textShadow}`}>Robin Schunn</h1>
+                        <p className={`text-lg ${css.textShadow}`}>TeekunDEV</p>
                     </div>
                     <div className={"flex flex-col content-center gap-2 items-center"}>
-                        <div className="flex flex-row space-x-4 mt-4 gap-1 items-center content-center">
+                        <div className="flex flex-row space-x-4 gap-1 items-center content-center">
                             <button className={css.button}>
                                 <p className={css.textShadow}>My Projects</p>
                             </button>
@@ -33,11 +34,26 @@ export default function Home() {
                             </button>
                         </div>
                         <div className={"flex flex-row w-auto justify-center gap-1"}>
-                            <SocialMediaHandle icon={GithubIcon} handleText={"@TeekunDEV"} />
-                            <SocialMediaHandle icon={InstagramIcon} handleText={"@kekkun_666"} />
-                            <SocialMediaHandle icon={LinkedinIcon} handleText={"@idk"} noText={true} />
+                            <SocialMediaHandle icon={GithubIcon} handleText={"@TeekunDEV"} href={"https://github.com/teekunDev"}/>
+                            <SocialMediaHandle icon={InstagramIcon} handleText={"@kekkun_666"} href={"https://www.instagram.com/kekkun_666/"}/>
+                            <SocialMediaHandle icon={LinkedinIcon} handleText={"@idk"} noText={true} href={"https://www.linkedin.com/in/robin-schunn-a76b342a9/"}/>
                         </div>
                     </div>
+                </div>
+                <div className={css.box}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </div>
         </div>

@@ -1,32 +1,119 @@
-.gradient {
-    background: linear-gradient(-45deg,  #a0b8d8, #cfa9d8, #d88ea1, #bcefdf);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-    height: max-content;
-    width: 100%;
-    z-index: -1;
+.wrapper{
     position: absolute;
-
+    width: 100%;
+    height: 100%;
+    overflow: clip;
+    background: linear-gradient(90deg, #ffa0f7 0%, #f3a8ff 35%, #ffc1f2 100%);
+    z-index: -1;
 }
-.children {
-    z-index: 1;
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
+.body{
+    margin: 0;
+    padding: 0;
+}
+
+.box div {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 6px solid #bf688f;
+}
+
+.box div:nth-child(1){
+    top: 12%;
+    left: 42%;
+    animation: animate 5s linear infinite;
+}
+
+.box div:nth-child(2){
+    top: 50%;
+    left: 18%;
+    animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(3){
+    top: 68%;
+    left: 35%;
+    animation: animate 12s linear infinite;
+}
+
+.box div:nth-child(4){
+    top: 27%;
+    left: 77%;
+    animation: animate 8s linear infinite;
+}
+
+.box div:nth-child(5){
+    top: 33%;
+    left: 60%;
+    animation: animate 15s linear infinite;
+}
+
+.box div:nth-child(6){
+    top: 14%;
+    left: 12%;
+    animation: animate 7s linear infinite;
+}
+
+.box div:nth-child(7){
+    top: 77%;
+    left: 10%;
+    animation: animate 8s linear infinite;
+}
+
+.box div:nth-child(8){
+    top: 17%;
+    left: 90%;
+    animation: animate 14s linear infinite;
+}
+
+.box div:nth-child(9){
+    top: 80%;
+    left: 86%;
+    animation: animate 13s linear infinite;
+}
+
+.box div:nth-child(10){
+    top: 60%;
+    left: 72%;
+    animation: animate 13s linear infinite;
+}
+
+.box div:nth-child(11){
+    top: 83%;
+    left: 55%;
+    animation: animate 7s linear infinite;
+}
+
+.box div:nth-child(12){
+    top: 88%;
+    left: 39%;
+    animation: animate 11s linear infinite;
+}
+
+.box div:nth-child(13){
+    top: 29%;
+    left: 30%;
+    animation: animate 11s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1;
     }
-    25% {
-        background-position: 50% 100%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    75% {
-        background-position: 50% 0%;
-    }
-    100% {
-        background-position: 0% 50%;
+    100%{
+        transform: scale(1.2) translateY(-90px) rotate(360deg);
+        opacity: 0;
     }
 }
 
@@ -40,7 +127,6 @@
     transition: all 0.1s ease-in-out; /* duration-100 */
     height: 2.5rem; /* fixed height */
     position: relative;
-    z-index: 10;
     justify-items: center;
 }
 
@@ -49,7 +135,6 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* hover:shadow-xl */
     font-size: 1.125rem; /* hover:text-lg */
     height: 3.125rem;
-    z-index: 20;
     transition-duration: 200ms;
 }
 
@@ -70,6 +155,5 @@
     justify-items: center;
     justify-self: center;
     position: relative;
-    z-index: 10;
     flex: content;
 }
