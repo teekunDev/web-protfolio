@@ -3,6 +3,8 @@ import Image from "next/image";
 import css from "./landingpage.module.css";
 import {GithubIcon, InstagramIcon, LinkedinIcon} from "lucide-react";
 import SocialMediaHandle from "@/components/SocialMediaHandle/SocialMediaHandle";
+import Routes from "@/components/routes";
+import Link from "next/link";
 
 
 
@@ -23,12 +25,15 @@ export default function Home() {
             </div>
             <div className={"flex flex-col content-center gap-2 items-center"}>
                 <div className="flex flex-row space-x-4 gap-1 items-center content-center">
-                    <button className={css.button}>
-                        <p className={css.textShadow}>My Projects</p>
-                    </button>
-                    <button className={`items-center content-center ${css.button}`}>
-                        <p className={css.textShadow}>About Me</p>
-                    </button>
+                    {Routes.map((route) => {
+                        return (
+                            <Link href={route.route} key={route.title}>
+                                <button className={css.button}>
+                                    <p className={css.textShadow}>{route.title}</p>
+                                </button>
+                            </Link>
+                        )
+                    })}
                 </div>
                 <div className={"flex flex-row w-auto justify-center gap-1"}>
                     <SocialMediaHandle icon={GithubIcon} handleText={"@TeekunDEV"} href={"https://github.com/teekunDev"}/>

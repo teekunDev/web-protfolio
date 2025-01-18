@@ -4,8 +4,11 @@
     height: 100%;
     overflow: clip;
     background: linear-gradient(90deg, #ffa0f7 0%, #f3a8ff 35%, #ffc1f2 100%);
-    z-index: -1;
+    z-index: -2;
 }
+
+
+
 
 
 .body{
@@ -19,6 +22,7 @@
     height: 60px;
     background-color: transparent;
     border: 6px solid #bf688f;
+    z-index: -1;
 }
 
 .box div:nth-child(1){

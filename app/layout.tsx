@@ -29,7 +29,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${animation.body}`}
       >
           <div className={animation.wrapper}>
-              {children}
+              <div className={""}>
+                  {children}
+              </div>
               <div className={animation.box}>
                   <div></div>
                   <div></div>
