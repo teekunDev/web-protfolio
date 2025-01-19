@@ -3,6 +3,7 @@ import React from 'react'
 import css from "./styles.module.css"
 import Link from "next/link";
 import Routes from "@/components/routes";
+import Image from "next/image";
 
 interface NavbarProps {
     invisible: boolean,
@@ -20,13 +21,22 @@ function Navbar(
 
     return (
         <div className={className + (`${!invisible ? "" : ""}`) }>
-            <div className={"flex justify-between mx-2"}>
-                <Link href={"/"}><p className={`${css.textShadow} text-2xl`}>TeekunDEV</p></Link>
+            <div className={"flex justify-between mx-2 items-center md:scale-100 sm:scale-75"}>
+                <Link href={"/"}>
+                    <div className={`flex justify-center gap-2 p-1 content-center items-center rounded-full`}>
+                        <Image src={"/me.jpg"}
+                               alt={"Homepage"}
+                               className={"rounded-full"}
+                               width={40}
+                               height={20}/>
+                        <p className={``}>TeekunDEV</p>
+                    </div>
+                </Link>
                 <ul className={"flex justify-center gap-2"}>
                 {Routes.map((route) => {
                     return(
                             <Link href={route.route} className={""} key={route.title}>
-                                <li>{route.title}</li>
+                                <li className={`hover:border-b-1 hover:border-pink-300 `}>{route.title}</li>
                             </Link>
                     )
                 })}
