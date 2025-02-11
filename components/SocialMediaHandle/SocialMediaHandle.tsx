@@ -30,9 +30,9 @@ const SocialMediaHandle:FC<SocialMediaHandleProps> = ({icon: Icon, handleText, n
         <>
             <a href={href} rel={"noopener noreferrer"} target={"_blank"}>
                 <button className={styles.button}  onMouseEnter={() => handleMouseEnter()} onMouseLeave={() => handleMouseLeave()}>
-                    <Icon size={16} />
+                    <Icon size={16} color={"white"} />
                     {(showText && handleVisible) &&
-                        <p>{handleText}</p>
+                        <p className={"text-white"}>{handleText}</p>
                     }
                 </button>
             </a>

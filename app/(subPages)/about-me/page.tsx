@@ -4,7 +4,7 @@ import AboutMeText from "@/components/AboutMe/AboutMeText";
 
 async function Page() {
     return (
-        <div className={"flex justify-center items-center justify-content-center"}>
+        <div className={"flex items-center content-center justify-center mt-10"}>
             <AboutMeText className={"w-3/5  min-h-full"}/>
         </div>
     )

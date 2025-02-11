@@ -20,8 +20,8 @@ export default function Home() {
                     height={180}
                     className={"rounded-xl border-2 border-fuchsia-300 shadow-lg"}
                 />
-                <h1 className={`font-bold text-4xl text-center ${css.textShadow}`}>Robin Schunn</h1>
-                <p className={`text-lg ${css.textShadow}`}>TeekunDEV</p>
+                <h1 className={`font-bold text-4xl text-center text-white ${css.textShadow}`}>Robin Schunn</h1>
+                <p className={`text-lg text-white ${css.textShadow}`}>TeekunDEV</p>
             </div>
             <div className={"flex flex-col content-center gap-2 items-center"}>
                 <div className="flex flex-row space-x-4 gap-1 items-center content-center">
@@ -29,7 +29,7 @@ export default function Home() {
                         return (
                             <Link href={route.route} key={route.title}>
                                 <button className={`${css.button}  items-center content-center flex`}>
-                                    <p className={`${css.textShadow} min-[120px]:text-sm md:text-lg`}>{route.title}</p>
+                                    <p className={`${css.textShadow} min-[120px]:text-sm md:text-lg text-white`}>{route.title}</p>
                                 </button>
                             </Link>
                         )
