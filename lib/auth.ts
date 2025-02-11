@@ -25,7 +25,7 @@ async function getUser(email: string, password: string){
     }
 }
 
-export const { auth, signIn, signOut} = NextAuth({
+export const { handlers, auth, signIn, signOut} = NextAuth({
     ...authConfig,
     providers: [
         Credentials({
@@ -44,8 +44,6 @@ export const { auth, signIn, signOut} = NextAuth({
                     console.error("Failed to get user");
                     throw new Error("Invalid credentials");
                 }
-
-                console.log(user)
 
                 return user;
             }

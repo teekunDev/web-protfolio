@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import {AdminDialog} from "@/components/AdminDialog/AdminDialog";
 import animation from "./animation.module.css"
+import {auth} from "@/lib/auth";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,16 +20,18 @@ export const metadata: Metadata = {
   description: "Personal Web-Portfolio made with Next.js",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+    const session = await auth()
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${animation.body}`}
       >
+        <AdminDialog session={session}/>
           <div className={animation.wrapper}>
               <div className={""}>
                   {children}

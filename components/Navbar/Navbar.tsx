@@ -3,10 +3,12 @@ import React from 'react'
 import Link from "next/link";
 import Routes from "@/components/routes";
 import Image from "next/image";
+import {Session} from "next-auth";
 
 interface NavbarProps {
     invisible: boolean,
     className?: string | null,
+    session: Session | null
 }
 
 
@@ -14,7 +16,8 @@ interface NavbarProps {
 function Navbar(
     {
         invisible = false,
-        className = ""
+        className = "",
+        session = null,
     } : NavbarProps) {
 
 

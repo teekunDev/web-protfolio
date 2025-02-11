@@ -1,10 +1,10 @@
 "use client"
-import React, {FC} from 'react'
+import React, {FC, useActionState} from 'react'
 import {signInSchema} from "@/lib/zod";
-import {SubmitHandler, useForm} from "react-hook-form";
+import {useForm} from "react-hook-form";
 import {z} from "zod";
+import {authenticate} from "@/components/signInForm/action";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {signIn} from "@/lib/auth";
 import {
     Form,
     FormField,
@@ -14,7 +14,7 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import {Input} from "@/components/ui/input"
-
+import {useSearchParams} from "next/navigation";
 import {Button} from "@/components/ui/button";
 
 const SignInForm:FC = () => {
@@ -26,43 +26,56 @@ const SignInForm:FC = () => {
         }
     });
 
-    const onSubmit: SubmitHandler<z.infer<typeof signInSchema>> = async(data) => {
-        console.log(data);
-        await signIn("credentials", data);
-    }
+    const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get('callbackUrl') || '/admin/dashboard';
+    const [errorMessage, formAction, isPending] = useActionState(
+        authenticate,
+        undefined,
+    );
+
+
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form action={formAction} className="space-y-8">
                 <FormField
                     control={form.control}
                     name="email"
-                    render={({ field }) => (
+                    render={({field}) => (
                         <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
                                 <Input placeholder="example@example.com" {...field} />
                             </FormControl>
-                            <FormMessage />
+                            <FormMessage/>
                         </FormItem>
                     )}
                 />
                 <FormField
                     control={form.control}
                     name="password"
-                    render={({ field }) => (
+                    render={({field}) => (
                         <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
                                 <Input placeholder="example" type={"password"} {...field} />
                             </FormControl>
-                            <FormMessage />
+                            <FormMessage/>
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Submit</Button>
+                <input type={"hidden"} name={"redirectTo"} value={callbackUrl}/>
+                <Button type="submit" disabled={isPending}>Submit</Button>
+                <div>
+                    {errorMessage && (
+                        <>
+                            <p className="text-red-500">{errorMessage}</p>
+                        </>
+                    )}
+                </div>
             </form>
         </Form>
+
     )
 }
 export default SignInForm
