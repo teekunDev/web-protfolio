@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import css from "./styles.module.css"
 import Link from "next/link";
 import Routes from "@/components/routes";
 import Image from "next/image";

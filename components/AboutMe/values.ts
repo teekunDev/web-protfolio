@@ -1,4 +1,6 @@
-const AboutMe = {
+import {emojify} from "node-emoji";
+
+export const AboutMe = {
     en: "Hi, my name is Robin, and I’m a 20-year-old software developer based in Austria. I am a certified professional with a completed apprenticeship in software development and 4 years of hands-on experience in the field.\n" +
         "\n" +
         "My expertise lies in backend development, where I have strong skills in PHP and TypeScript.\n" +
@@ -21,13 +23,12 @@ const AboutMe = {
 
 export const Languages = [
     {
-        language: "🇩🇪 German",
+        language: emojify(":de: German"),
         languageCode: "de"
     },
     {
-        language: "🇺🇸 English",
+        language: emojify(":us: English"),
         languageCode: "en"
     }
 ]
 
-export default AboutMe

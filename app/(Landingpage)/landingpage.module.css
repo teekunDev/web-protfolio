@@ -16,7 +16,6 @@
     transition: all 0.1s ease-in-out; /* duration-100 */
     height: 2.5rem; /* fixed height */
     position: relative;
-    justify-items: center;
 }
 
 .button:hover {

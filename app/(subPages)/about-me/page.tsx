@@ -1,10 +1,11 @@
 "use server"
 import React from 'react'
+import AboutMeText from "@/components/AboutMe/AboutMeText";
 
 async function Page() {
     return (
-        <div className={""}>
-            <h1 className={"text-5xl"}>Nothing there yet</h1>
+        <div className={"flex justify-center items-center justify-content-center"}>
+            <AboutMeText className={"w-3/5  min-h-full"}/>
         </div>
     )
 }

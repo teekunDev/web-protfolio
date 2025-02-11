@@ -28,8 +28,8 @@ export default function Home() {
                     {Routes.map((route) => {
                         return (
                             <Link href={route.route} key={route.title}>
-                                <button className={css.button}>
-                                    <p className={`${css.textShadow} sm:text-xs`}>{route.title}</p>
+                                <button className={`${css.button}  items-center content-center flex`}>
+                                    <p className={`${css.textShadow} min-[120px]:text-sm md:text-lg`}>{route.title}</p>
                                 </button>
                             </Link>
                         )
