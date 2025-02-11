@@ -2,7 +2,6 @@
 import React, {FC, useState} from 'react'
 import {AboutMe, Languages} from "@/components/AboutMe/values";
 import Image from "next/image";
-import {emojify, find} from "node-emoji";
 
 interface AboutMeTextProps {
     className?: string
