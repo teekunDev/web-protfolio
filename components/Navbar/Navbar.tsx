@@ -4,6 +4,7 @@ import Link from "next/link";
 import Routes from "@/components/routes";
 import Image from "next/image";
 import {Session} from "next-auth";
+import UserDropdown from "@/components/UserDropdown/UserDropdown";
 
 interface NavbarProps {
     invisible: boolean,
@@ -24,6 +25,7 @@ function Navbar(
     return (
         <div className={className + (`${!invisible ? "" : ""}`) }>
             <div className={"flex justify-between mx-2 items-center md:scale-100 sm:scale-75"}>
+
                 <Link href={"/"}>
                     <div className={`flex justify-center gap-2 p-1 content-center items-center rounded-full`}>
                         <Image src={"/me.jpg"}
@@ -43,6 +45,9 @@ function Navbar(
                     )
                 })}
                 </ul>
+
+
+
             </div>
         </div>
     )
